@@ -9,3 +9,4 @@ class Config:
     SECURITY_PASSWORD_HASH = getenv("SECURITY_PASSWORD_HASH")
     CELERY_BROKER_URL = 'redis://redis:6379/0'
     CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+    UPLOADED_IMAGES_DEST = 'uploads/images'

@@ -19,3 +19,9 @@ class Dom(Enum):
     eight = 8
     nine = 9
     ten = 10
+
+
+class ActJob(Enum):
+    pending = 'В ожидании'
+    start = 'В работе'
+    finish = 'Выполнено'
