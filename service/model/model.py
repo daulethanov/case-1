@@ -5,7 +5,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from .enum import Street, Dom, ActJob
 
-
 images = UploadSet('images', IMAGES)
 
 roles_users = db.Table(
@@ -14,7 +13,6 @@ roles_users = db.Table(
     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('role_id', db.Integer, db.ForeignKey('role.id'))
 )
-
 
 users_rooms = db.Table(
     'users_rooms',
@@ -29,7 +27,6 @@ users_messages = db.Table(
     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('message_id', db.Integer, db.ForeignKey('message.id'))
 )
-
 
 users_company = db.Table(
     'users_company',
@@ -68,6 +65,7 @@ class User(db.Model, UserMixin):
     user_room = db.relationship('UserRoom', secondary='users_rooms', backref=db.backref('users', lazy='dynamic'))
     roles = db.relationship('Role', secondary='roles_users', backref=db.backref('users', lazy='dynamic'))
     problem = db.relationship('Problem', backref=db.backref('users'))
+    idea = db.relationship('Idea', backref=db.backref('users'))
     price = db.Column(db.Integer)
     star = db.Column(db.Integer)
 
@@ -119,13 +117,22 @@ class Problem(db.Model):
 
     id = db.Column(db.Integer(), primary_key=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
-    message = db.Column(db.Text())
+    title = db.Column(db.Text())
+    description = db.Column(db.Text())
     create_at = db.Column(db.DateTime(), default=datetime.now())
     finish = db.Column(db.DateTime())
     completed = db.Column(db.Boolean(), default=0)
     image = db.Column(db.String(255))
     act_job = db.Column(db.Enum(ActJob))
     star = db.Column(db.Integer, nullable=False, default=1)
+    rating = db.relationship('ProblemRating', backref=db.backref('users'))
+
+
+    def get_average_rating(self):
+        ratings = [r.rating for r in self.ratings]
+        if not ratings:
+            return 0
+        return sum(ratings) / len(ratings)
 
     def save_image(self, image):
         """
@@ -147,6 +154,19 @@ class Problem(db.Model):
             db.session.commit()
 
 
+class ProblemRating(db.Model):
+    __tablename__ = 'problem_rating'
+
+    id = db.Column(db.Integer(), primary_key=True)
+    problem_id = db.Column(db.Integer(), db.ForeignKey('problem.id'))
+    user_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    rating = db.Column(db.Integer(), nullable=False)
+
+    __table_args__ = (
+        db.UniqueConstraint('problem_id', 'user_id', name='_problem_user_uc'),
+    )
+
+
 class Company(db.Model):
     __tablename__ = 'company'
     id = db.Column(db.Integer(), primary_key=True)
@@ -156,3 +176,13 @@ class Company(db.Model):
 
     def __repr__(self):
         return self.name
+
+
+class Idea(db.Model):
+    __tablename__ = 'idea'
+
+    id = db.Column(db.Integer(), primary_key=True)
+    user_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    title = db.Column(db.String())
+    description = db.Column(db.Text())
+    create_at = db.Column(db.DateTime(), default=datetime.now())

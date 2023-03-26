@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Регистрация жильцов</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="{{url_for('static', filename='rgistration-of-tenants.css')}}">
+</head>
+
+<body>
+	<div class="position">
+		<!-- начало меню -->
+		<div class="menu">
+			<a href="../applications.html"><img src="img/menu/logo.svg" alt="logo" id="logo"></a>
+			<div class="munu____content__block__first">
+				<ul>
+					<li class="menu__item">
+						<a href="#">
+							<img src="img/menu/repair.svg" alt="repair">
+							<h3>Ремонт</h3>
+						</a>
+					</li>
+					<li class="menu__item"><a href="../performers/performers.html">
+							<img src="img/menu/performers.svg" alt="performers">
+							<h3>Исполнители</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/applications.svg" alt="applications">
+							<h3>Заявки</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/budget-analytics.svg" alt="budget-analytics">
+							<h3>Аналитика бюджета</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/cctv.svg" alt="add-tenants">
+							<h3>Видеонаблюдение</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/add-tenants.svg" alt="add-tenants">
+							<h3>Добавить жильцов</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/survey.svg" alt="survey">
+							<h3>Опрос</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/resident-ideas.svg" alt="resident-ideas">
+							<h3>Идеи жильцов</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="img/menu/poll-results.svg" alt="poll-results">
+							<h3>Результаты опросов</h3>
+						</a></li>
+				</ul>
+			</div>
+			<div class="menu__setting">
+				<a href="#">
+					<img src="img/menu/setting.svg" alt="setting">
+					<h3>Настройки</h3>
+				</a>
+			</div>
+		</div>
+		<!-- конец меню -->
+
+		<div class="registration__of__tenants__content">
+			<!-- Начало верхнего меню -->
+			<div class="registration__of__tenants__content__top">
+				<div class="registration__of__tenants__content__top__left">
+					<img src="img/rgistration-of-tenants/rgistration-of-tenants.svg" alt="">
+					<h2>Регистрация жильцов</h2>
+				</div>
+				<div class="registration__of__tenants__content__top__rigt"></div>
+				<div class="registration__of__tenants__content__top__right">
+					<div class="registration__of__tenants__content__top__right__notifications">
+						<img id="registration__of__tenants__content__top__right__notifications"
+							src="img/rgistration-of-tenants/notifications.svg" alt="notifications">
+						<div class="registration__of__tenants__content__top__right__notifications__item">
+							<h4>Ваши уведомления</h4>
+							<button class="notifications__item__button-blue">Заявка на решение проблемы</button>
+							<button class="notifications__item__button-yellow">Идея для реализации</button>
+							<button class="notifications__item__button-red">Проблема срочной реалищации</button>
+						</div>
+					</div>
+					<div class="registration__of__tenants__content__top__right__profile">
+						<img id="registration__of__tenants__content__top__right__profile"
+							src="img/rgistration-of-tenants/profile.svg" alt="profile">
+						<button class="registration__of__tenants__content__top__right__profile__item">Выйти
+							<img src="img//rgistration-of-tenants/exit.svg" alt="exit">
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- Конец верхнего меню -->
+			<!-- Начало контейнера с формами -->
+			<div class="registration__of__tenants__form">
+				<!-- Начало формы пригласите нового жильца в вашу систему -->
+				<div class="registration__of__tenants__form__new__tenant">
+					<img src="img/rgistration-of-tenants/osl.svg" alt="">
+					<p>
+					<h4>Пригласите нового жильца в вашу систему</h4>
+					</p>
+					<input required type="text" placeholder="Квартира"
+						class="registration__of__tenants__form__new__tenant__input ">
+					<input required type="email" placeholder="Почта"
+						class="registration__of__tenants__form__new__tenant__input ">
+					<input required type="text" placeholder="ФИО"
+						class="registration__of__tenants__form__new__tenant__input ">
+					<p>
+					<h3>Определите в группу</h3>
+					</p>
+					<input type="radio" name="role" id="Chairman"
+						class="registration__of__tenants__form__new__tenant__radio"><label
+						id="Chairman">Представитель</label>
+					<input type="radio" name="role" id="Inhabitant"
+						class="registration__of__tenants__form__new__tenant__radio"><label
+						id="Inhabitant">Житель</label>
+					<input type="radio" name="role" id="Worker"
+						class="registration__of__tenants__form__new__tenant__radio"><label id="Worker">Работник</label>
+					<button type="submit">Отправить</button>
+				</div>
+				<!-- Конец формы пригласите нового жильца в вашу систему -->
+
+				<!-- Начало формы гениратор логина-->
+				<div class="registration__of__tenants__form__login__generator">
+					<img src="img/rgistration-of-tenants/osl.svg" alt="">
+					<p><h2>Не жди данных</h2></p>
+					<p><h4>Генерируй для каждой квартиры свой логин и пароль для сервиса</h4></p>
+					<input placeholder="Квартира" type="text" name="" id="">
+					<button id="registration__of__tenants__form__login__generator__button__generation">Сгенерировать</button>
+					<button id="registration__of__tenants__form__login__generator__button">Скачать файл</button>
+				</div>
+					<!-- Конец формы гениратор логина-->
+			</div>
+			<!-- Конец контейнера с формами -->
+		</div>
+
+
+
+		<script src="./rgistration-of-tenants.js"></script>
+
+</body>
+
+</html>

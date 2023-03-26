@@ -6,8 +6,6 @@ from service.config.Base import Config
 from service.model import db
 from service.model.model import user_datastore, images
 from service.admin.admin import admin
-from flask_jwt_extended import JWTManager
-
 from service.view.auth import auth
 from service.view.problem import problem
 

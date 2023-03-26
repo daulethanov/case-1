@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Заявки</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="{{url_for('static', filename='css/applications.css')}}">
+</head>
+
+<body>
+<script src="{{ url_for('static', filename='js/applications.js') }}"> </script>
+
+	<!-- Начало модальные окна  -->
+	<!-- Начало модального окна для "К реализации" в листе -->
+	<div class=" modal__for__execution">
+		<div class="modal__for__execution__item">
+			<div class="modal__for__execution__item__name">
+				<span>Ал</span>
+				<h3>Алексей Сидорович </h3>
+			</div>
+			<p>
+			<h3>Место</h3>
+			</p>
+			<p>
+			<h4>Второй подъезд , этаж 2</h4>
+			</p>
+			<p>
+			<h3>Описание</h3>
+			</p>
+			<p>
+			<h4>Течёт труба мощно надо срочно решить, так как нет холодной воды на пятом этаже</h4>
+			</p>
+			<p>
+			<h3>Вложения</h3>
+			</p>
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}">
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}">
+			<p>
+			<h3>Дата отправки:</h3>
+			</p>
+			<p>
+			<h3 id="modal__for__execution__item__name__date"> 2023.03.25</h3>
+			</p>
+			<button>Принять</button>
+			<button>Отклонить</button>
+		</div>
+	</div>
+	<!-- Конец модального окна для "К реализации" в листе -->
+
+	<!-- Начало модального окна для "В работе" в листе -->
+	<div class=" modal__in__work">
+		<div class="modal__in__work__item">
+			<div class="modal__in__work__item__name">
+				<span>Ал</span>
+				<h3>Алексей Сидорович </h3>
+			</div>
+			<p>
+			<h3>Место</h3>
+			</p>
+			<p>
+			<h4>Второй подъезд , этаж 2</h4>
+			</p>
+			<p>
+			<h3>Описание</h3>
+			</p>
+			<p>
+			<h4>Течёт труба мощно надо срочно решить, так как нет холодной воды на пятом этаже</h4>
+			</p>
+			<p>
+			<h3>Вложения</h3>
+			</p>
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<p>
+			<h3>Дата отправки:</h3>
+			</p>
+			<p>
+			<h3 id="modal__in__work__item__name__date"> 2023.03.25</h3>
+			</p>
+			<select>
+				<option value="Анашолий Туркин">Анашолий Туркин</option>
+				<option value="Анашолий Туркин">СантехТооКорп</option>
+			</select>
+			<button>Работа выполнена</button>
+		</div>
+	</div>
+	<!-- Конец модального окна для "В работе" в листе -->
+
+	<!-- Начало модального окна для "Выполнено" в листе -->
+	<div class=" modal__completed">
+		<div class="modal__completed__item">
+			<div class="modal__completed__item__name">
+				<span>Ал</span>
+				<h3>Алексей Сидорович </h3>
+			</div>
+			<p>
+			<h3>Место</h3>
+			</p>
+			<p>
+			<h4>Второй подъезд , этаж 2</h4>
+			</p>
+			<p>
+			<h3>Описание</h3>
+			</p>
+			<p>
+			<h4>Течёт труба мощно надо срочно решить, так как нет холодной воды на пятом этаже</h4>
+			</p>
+			<p>
+			<h3>Вложения</h3>
+			</p>
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<p>
+			<h3>Дата отправки:</h3>
+			</p>
+			<p>
+			<h3 id="modal__completed__item__name__date"> 2023.03.25</h3>
+			</p>
+			<div class="modal__completed__item__select">Анашолий Туркин</div>
+			<p>
+			<h4>Отзывы о проделанной работе</h4>
+			</p>
+			<div class="modal__completed__item__reviews">
+				<div class="modal__completed__item__reviews__name">
+					<div class="modal__completed__item__reviews__name__item">
+						<span>Рз</span>
+						<h4>Руслан Зигмундов</h4>
+					</div>
+
+					<div>
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+					</div>
+
+				</div>
+				<h4>Работа была выполнена качественно и в срок,
+					самое главное с философской точки зрения.
+					мне понравилось что не было никаких матов
+					и работник был очен спокоен, отнёсся к данной ситуации с пониманием.</h4>
+			</div>
+		</div>
+	</div>
+	<!-- Конец модального окна для "Выполнено" в листе -->
+
+	<!-- Начало модального окна для "К реализации" в доске -->
+	<div class=" modal__for__execution__board">
+		<div class="modal__for__execution__item__board">
+			<div class="modal__for__execution__item__name__board">
+				<span>Ал</span>
+				<h3>Алексей Сидорович </h3>
+			</div>
+			<p>
+			<h3>Место</h3>
+			</p>
+			<p>
+			<h4>Второй подъезд , этаж 2</h4>
+			</p>
+			<p>
+			<h3>Описание</h3>
+			</p>
+			<p>
+			<h4>Течёт труба мощно надо срочно решить, так как нет холодной воды на пятом этаже</h4>
+			</p>
+			<p>
+			<h3>Вложения</h3>
+			</p>
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<p>
+			<h3>Дата отправки:</h3>
+			</p>
+			<p>
+			<h3 id="modal__for__execution__item__name__date__board"> 2023.03.25</h3>
+			</p>
+			<button >Принять</button>
+			<button>Отклонить</button>
+		</div>
+	</div>
+	<!-- Конец модального окна для "К реализации" в доске -->
+
+	<!-- Начало модального окна для "В разработке" в доске -->
+	<div class=" modal__in__work__board">
+		<div class="modal__in__work__item__board">
+			<div class="modal__in__work__item__name__board">
+				<span>Ал</span>
+				<h3>Алексей Сидорович </h3>
+			</div>
+			<p>
+			<h3>Место</h3>
+			</p>
+			<p>
+			<h4>Второй подъезд , этаж 2</h4>
+			</p>
+			<p>
+			<h3>Описание</h3>
+			</p>
+			<p>
+			<h4>Течёт труба мощно надо срочно решить, так как нет холодной воды на пятом этаже</h4>
+			</p>
+			<p>
+			<h3>Вложения</h3>
+			</p>
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<p>
+			<h3>Дата отправки:</h3>
+			</p>
+			<p>
+			<h3 id="modal__in__work__item__name__date__board"> 2023.03.25</h3>
+			</p>
+			<select>
+				<option value="Анашолий Туркин">Анашолий Туркин</option>
+				<option value="Анашолий Туркин">СантехТооКорп</option>
+			</select>
+			<button>Работа выполнена</button>
+		</div>
+	</div>
+	<!-- Конец модального окна для "В разработке" в доске -->
+
+	<!-- Начало модального окна для "Выполнено" в доске -->
+	<div class=" modal__completed__board">
+		<div class="modal__completed__item__board">
+			<div class="modal__completed__item__name__board">
+				<span>Ал</span>
+				<h3>Алексей Сидорович </h3>
+			</div>
+			<p>
+			<h3>Место</h3>
+			</p>
+			<p>
+			<h4>Второй подъезд , этаж 2</h4>
+			</p>
+			<p>
+			<h3>Описание</h3>
+			</p>
+			<p>
+			<h4>Течёт труба мощно надо срочно решить, так как нет холодной воды на пятом этаже</h4>
+			</p>
+			<p>
+			<h3>Вложения</h3>
+			</p>
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<img src="{{url_for('static', filename='img/modal/modal-foto.jpg')}}" alt="">
+			<p>
+			<h3>Дата отправки:</h3>
+			</p>
+			<p>
+			<h3 id="modal__completed__item__name__date__board"> 2023.03.25</h3>
+			</p>
+			<div class="modal__completed__item__select__board">Анашолий Туркин</div>
+			<p>
+			<h4>Отзывы о проделанной работе</h4>
+			</p>
+			<div class="modal__completed__item__reviews__board">
+				<div class="modal__completed__item__reviews__name__board">
+					<div class="modal__completed__item__reviews__name__item__board">
+						<span>Рз</span>
+						<h4>Руслан Зигмундов</h4>
+					</div>
+
+					<div>
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+						<img src="{{url_for('static', filename='img/modal/star.svg')}}" alt="">
+					</div>
+
+				</div>
+				<h4>Работа была выполнена качественно и в срок,
+					самое главное с философской точки зрения.
+					мне понравилось что не было никаких матов
+					и работник был очен спокоен, отнёсся к данной ситуации с пониманием.</h4>
+			</div>
+		</div>
+	</div>
+	<!-- Конец модального окна для "Выполнено" в доске -->
+
+	<!-- Конец модальные окна  -->
+
+	<div class="position">
+		<!-- начало меню -->
+		<div class="menu">
+			<a href="applications.html"><img src="{{url_for('static', filename='img/menu/logo.svg')}}" alt="logo" id="logo"></a>
+			<div class="munu____content__block__first">
+				<ul>
+					<li class="menu__item">
+						<a href="#">
+							<img src="{{url_for('static', filename='img/menu/repair.svg')}}" alt="repair">
+							<h3>Ремонт</h3>
+						</a>
+					</li>
+					<li class="menu__item"><a href="./performers/performers.html">
+							<img src="{{url_for('static', filename='img/menu/performers.svg')}}" alt="performers">
+							<h3>Исполнители</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="{{url_for('static', filename='img/menu/applications.svg')}}" alt="applications">
+							<h3>Заявки</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="{{url_for('static', filename='img/menu/budget-analytics.svg')}}" alt="budget-analytics">
+							<h3>Аналитика бюджета</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="{{url_for('static', filename='img/menu/cctv.svg')}}" alt="add-tenants">
+							<h3>Видеонаблюдение</h3>
+						</a></li>
+					<li class="menu__item"><a href="registration-of-tenants/rgistration-of-tenants.html">
+							<img src="{{url_for('static', filename='img/menu/add-tenants.svg')}}" alt="add-tenants">
+							<h3>Добавить жильцов</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="{{url_for('static', filename='img/menu/survey.svg')}}" alt="survey">
+							<h3>Опрос</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="{{url_for('static', filename='img/menu/resident-ideas.svg')}}" alt="resident-ideas">
+							<h3>Идеи жильцов</h3>
+						</a></li>
+					<li class="menu__item"><a href="#">
+							<img src="{{url_for('static', filename='img/menu/poll-results.svg')}}" alt="poll-results">
+							<h3>Результаты опросов</h3>
+						</a></li>
+				</ul>
+			</div>
+			<div class="menu__setting">
+				<a href="#">
+					<img src="{{url_for('static', filename='img/menu/setting.svg')}}" alt="setting">
+					<h3>Настройки</h3>
+				</a>
+			</div>
+		</div>
+		<!-- конец меню -->
+
+
+		<div class="applications__content">
+			<!-- Начало верхнего меню -->
+			<div class="applications__content__top">
+				<div class="applications__content__top__left">
+					<img src="{{url_for('static', filename='img/applications/applications-logo.svg')}}" alt="applications">
+					<h2>Заявки</h2>
+				</div>
+				<div class="applications__content__top__right">
+					<div class="applications__content__top__right__notifications">
+						<img id="applications__content__top__right__notifications top__right__notifications"
+							src="{{url_for('static', filename='img/applications/notifications.svg')}}" alt="notifications">
+						<div class="applications__content__top__right__notifications__item">
+							<h4>Ваши уведомления</h4>
+							<button class="notifications__item__button-blue">Заявка на решение проблемы</button>
+							<button class="notifications__item__button-yellow">Идея для реализации</button>
+							<button class="notifications__item__button-red">Проблема срочной реалищации</button>
+						</div>
+					</div>
+					<div class="applications__content__top__right__profile">
+						<img id="applications__content__top__right__profile top__right__notifications" src="{{url_for('static', filename='img/applications/profile.svg')}}"
+							alt="profile">
+						<button class="applications__content__top__right__profile__item">Выйти
+							<img src="{{url_for('static', filename='img/applications/exit.svg')}}" alt="exit">
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Конец верхнего меню -->
+
+	
+
+			<!-- Начало заявок -->
+			<div class="applications__content__item">
+				<!-- Начало кнопок для открытия заявок -->
+				<div class="applications__content__button__view">
+					<button id="applications__content__button__view__button__list"
+						class="applications__content__button__view__button active">Список</button>
+					<button id="applications__content__button__view__button__board"
+						class="applications__content__button__view__button">Доска</button>
+					<button class="applications__content__button__view__button">Календарь</button>
+				</div>
+				<!-- Конец кнопок для открытия заявок -->
+
+				<!-- Начало фильтра -->
+				<div class="applications__filter">
+					<div class="applications__filter__item">
+						<img src="img/filtr/filtr.svg" alt="">
+						<h5>Фильтр</h5>
+					</div>
+					<div class="applications__filter__item">
+						<img src="img/filtr/sort.svg" alt="">
+						<h5>Сортировка</h5>
+					</div>
+					<div class="applications__filter__item">
+						<img src="{{url_for('static', filename='img/filtr/actual.svg')}}" alt="">
+						<h5>Показывать самые актуальные</h5>
+					</div>
+				</div>
+				<!-- Начало фильтра -->
+
+				<!-- Начало открытия заявок в форме списка -->
+				<div class="applications__content__item__applications active">
+					<!-- Начало кнопки "К исполнению" -->
+					<div class="item__applications__for__execution">
+						<button id="item__applications__for__execution"><img
+								id="item__applications__for__execution__img" src="{{url_for('static', filename='img/applications/arrow.svg')}}"
+								alt="arrow"> К исполнению</button>
+						<div class="item__applications__for__execution__open">
+							<!-- Начало формы "К исполнению" -->
+							<div class="item__applications__for__execution__item modal__for__execution__open">
+								<div class="item__applications__for__execution__item__applications">
+									<div>
+										<div class="item__applications__for__execution__item__applications__txt">
+											<h3><img src="{{url_for('static', filename='img/applications/arrow2.svg')}}" alt=""> Течёт труба мощно надо
+												срочно</h3>
+										</div>
+									</div>
+									<div class="item__applications__for__execution__left">
+										<div class="item__applications__for__execution__item__applications__name">
+											<span
+												class="item__applications__for__execution__item__applications__name__icon">Ал</span>
+											<h4>Алексей Степанов</h4>
+										</div>
+										<div class="item__applications__for__execution__item__applications__date">
+											<h4>25 мар - сегодня</h4>
+										</div>
+										<div class="item__applications__for__execution__item__applications__status">
+											<h3>Высокий</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Конец формы "К исполнению" -->
+						</div>
+					</div>
+					<!-- Конец кнопки "К исполнению" -->
+
+					<!-- Начало кнопки "В работе" -->
+					<div class="item__applications__in__work">
+						<button id="item__applications__in__work"><img id="item__applications__in__work__img"
+								src="{{url_for('static', filename='img/applications/arrow.svg')}}" alt="arrow"> В работе</button>
+						<div class="item__applications__in__work__open">
+							<!-- Начало формы "В работе" -->
+							<div class="item__applications__in__work__item modal__in__work__open">
+								<div class="item__applications__in__work__item__applications">
+									<div>
+										<div class="item__applications__in__work__item__applications__txt">
+											<h3><img src="{{url_for('static', filename='img/applications/arrow2.svg')}}" alt=""> Течёт труба мощно надо
+												срочно</h3>
+										</div>
+									</div>
+									<div class="item__applications__in__work__left">
+										<div class="item__applications__in__work__item__applications__name">
+											<span
+												class="item__applications__in__work__item__applications__name__icon">Ал</span>
+											<h4>Алексей Степанов</h4>
+										</div>
+										<div class="item__applications__in__work__item__applications__date">
+											<h4>25 мар - сегодня</h4>
+										</div>
+										<div class="item__applications__in__work__item__applications__status">
+											<h3>Высокий</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Конец формы "В работе" -->
+						</div>
+					</div>
+					<!-- Конец кнопки "В работе" -->
+
+					<!-- Начало кнопки "Выполнено" -->
+					<div class="item__applications__completed">
+						<button id="item__applications__completed"><img id="item__applications__completed__img"
+								src="{{url_for('static', filename='img/applications/arrow.svg')}}" alt="arrow"> Выполнено</button>
+						<div class="item__applications__completed__open">
+							<!-- Начало формы "Выполнено" -->
+							<div class="item__applications__completed__item modal__completed__open">
+								<div class="item__applications__completed__item__applications">
+									<div>
+										<div class="item__applications__completed__item__applications__txt">
+											<h3><img src="{{url_for('static', filename='img/applications/arrow2.svg')}}" alt=""> Течёт труба мощно надо
+												срочно</h3>
+										</div>
+									</div>
+									<div class="item__applications__completed__left">
+										<div class="item__applications__completed__item__applications__name">
+											<span
+												class="item__applications__completed__item__applications__name__icon">Ал</span>
+											<h4>Алексей Степанов</h4>
+										</div>
+										<div class="item__applications__completed__item__applications__date">
+											<h4>25 мар - сегодня</h4>
+										</div>
+										<div class="item__applications__completed__item__applications__status">
+											<h3>Высокий</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Конец формы "Выполнено" -->
+						</div>
+					</div>
+
+					<!-- Конец кнопки "Выполнено" -->
+				</div>
+				<!-- Конец открытия заявок в форме списка -->
+
+				<!-- Начало открытия заявок в форме доски -->
+				<div class="applications__content__item__applications__board">
+					<div class="applications__content__item__applications__board__content">
+						<div class="item__applications__board__item item__applications__board__item__for__execution">
+							<h2>К исполнению</h2>
+							<div class="item__applications__board__item__application">
+								<div
+									class="item__applications__board__item__application__item modal__for__execution__open__board">
+									<h3>Течёт труба мощно надо срочно</h3>
+									<button>Высокий</button>
+									<div class="item__applications__board__item__application__item__date">
+										<div class="item__applications__board__item__application__item__date__left">
+											<span>Ал</span>
+											<h3>25 мар</h3>
+										</div>
+										<div class="item__applications__board__item__application__item__date__right">
+											<h3>Кол-во голосов</h3>
+											<span>100</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item__applications__board__item item__applications__board__item__in__work">
+							<h2>В работе</h2>
+							<div class="item__applications__board__item__application">
+								<div
+									class="item__applications__board__item__application__item modal__in__work__open__board">
+									<h3>Течёт труба мощно надо срочно</h3>
+									<button>Высокий</button>
+									<div class="item__applications__board__item__application__item__date">
+										<div class="item__applications__board__item__application__item__date__left">
+											<span>Ал</span>
+											<h3>25 мар</h3>
+										</div>
+										<div class="item__applications__board__item__application__item__date__right">
+											<h3>Кол-во голосов</h3>
+											<span>100</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item__applications__board__item item__applications__board__item__completed">
+							<h2>Выполнено</h2>
+							<div class="item__applications__board__item__application">
+								<div
+									class="item__applications__board__item__application__item modal__completed__open__board">
+									<h3>Течёт труба мощно надо срочно</h3>
+									<button>Высокий</button>
+									<div class="item__applications__board__item__application__item__date">
+										<div class="item__applications__board__item__application__item__date__left">
+											<span>Ал</span>
+											<h3>25 мар</h3>
+										</div>
+										<div class="item__applications__board__item__application__item__date__right">
+											<h2>Выполнено</h2>
+											<img src="{{url_for('static', filename='img/applications/check.svg' )}}" alt="check">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Конец открытия заявок в форме доски -->
+
+
+		<!-- Конец заявок -->
+	</div>
+	</div>
+
+
+
+
+</body>
+
+</html>
