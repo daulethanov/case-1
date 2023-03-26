@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
 from flask_login import current_user
+from flask_swagger_ui import get_swaggerui_blueprint
 
 from service.form.problem import ProblemForm, VoteForm
 from service.model.model import Problem, db, ProblemRating

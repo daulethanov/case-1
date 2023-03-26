@@ -26,6 +26,14 @@ sqlalchemy-imageattach = "*"
 pillow = "*"
 flask-uploads = "==0.2.0"
 sqlalchemy = "*"
+marshmallow = "*"
+install = "*"
+flask-swagger-ui = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+flask-restful = "*"
+flask-apispec = "*"
+flasgger = "*"
 
 [dev-packages]
 
