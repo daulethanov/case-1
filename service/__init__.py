@@ -2,7 +2,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from flask_security import Security
 from flask_uploads import configure_uploads
-
+from service.chat.socket import chat
 from service.chat import redis
 from service.chat.socket import socketio
 from service.config.Base import Config
@@ -14,6 +14,7 @@ from service.view.problem import docs
 from service.view.auth import auth
 from service.view.problem import problem, list_problem
 from flask_cors import CORS
+
 
 def create_app():
     app = Flask(__name__)
@@ -30,6 +31,7 @@ def create_app():
     socketio.init_app(app, cors_allowed_origins="*")
     app.register_blueprint(auth)
     app.register_blueprint(problem)
+    app.register_blueprint(chat)
     docs.init_app(app)
 
     return app
