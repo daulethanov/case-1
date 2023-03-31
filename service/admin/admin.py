@@ -1,12 +1,11 @@
-from datetime import datetime, timedelta
-import pytz
-from flask import flash
 from flask_admin import Admin
-from flask_admin.actions import action
 from flask_admin.contrib.sqla import ModelView
 from flask_login import current_user
 from service import db
-from service.model.model import User, Role, Message, UserRoom, Problem, ProblemRating, Idea
+from service.model.problem import UserRoom, Problem, ProblemRating
+from service.model.idea import Idea
+from service.model.chat import Message
+from service.model.user import User, Role
 
 admin = Admin()
 
@@ -23,12 +22,9 @@ class MyModelView(ModelView):
 
 
 class UserAdminView(ModelView):
-    # column_display_pk = True
     column_hide_backrefs = False
-    column_list = ('id', 'first_name', 'last_name', 'email', 'password', 'token', 'active',
+    column_list = ('id', 'first_name', 'last_name', 'email', 'token', 'active',
                    'created_at', 'street', 'dom', 'number', 'message', 'roles')
-    # form_columns = ('first_name', 'last_name', 'email', 'password', 'token', 'active',
-    #                 'street', 'dom', 'number', 'messages', 'roles')
 
 
 class RatingAdmin(ModelView):

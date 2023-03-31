@@ -1,42 +1,40 @@
-from flask import Blueprint, redirect, url_for, render_template
-import random
-from service.form.auth import RegisterForm, LoginForm, CreateBaseUserForm
-from service.model.model import User
-auth = Blueprint('auth', __name__, url_prefix='/auth')
+from flask import Blueprint, jsonify
+from flask_apispec import use_kwargs, marshal_with
+from flask_jwt_extended import jwt_required, get_jwt_identity
+from service import User, docs
+from service.shema.user import UserSchema, AuthSchema
+
+auth = Blueprint('auth', __name__, url_prefix='/api/auth')
 
 
-@auth.route('/register', methods=['GET', 'POST'])
-def register():
-    form = RegisterForm()
-    if form.validate_on_submit():
-        user = User(email=form.email.data, password=form.password.data, street=form.street.data)
-        user.password_hash(form.password.data)
-        user.create_users(user)
-        return redirect(url_for('login'))
-    return render_template('register.html', form=form)
+@auth.route('/register', methods=['POST'])
+@use_kwargs(UserSchema(only=['first_name', 'last_name', 'email', 'password']))
+@marshal_with(AuthSchema)
+def register(**kwargs):
+    user = User(**kwargs)
+    user.password_hash(kwargs['password'])
+    user.create_users(user)
+    return user, 201
 
 
-@auth.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User(email=form.email.data, password=form.password.data)
-        if user:
-            user.check_password(password=form.password.data)
-            return redirect('register')
-
-    return render_template('login.html', form=form)
+@auth.route('/login', methods=['POST'])
+@use_kwargs(UserSchema(only=['email', 'password']))
+@marshal_with(UserSchema)
+def login(**kwargs):
+    user = User.authenticate(**kwargs)
+    token = user.get_auth_token()
+    return {'access_token': token}
 
 
-@auth.route('/create_account', methods=["GET", "POST"])
-def create_base_user():
-    form = CreateBaseUserForm()
-    if form.validate_on_submit():
-        password_hash = random.randint(1, 9)
-        pwd = User.password_hash(password_hash)
-        user = User(first_name=form.first_name.data, last_name=form.last_name.data, token=form.token.data, password=pwd)
-        user.create_users(user)
-        return redirect(url_for('home'))
-    return render_template('index.html', form=form)
+@auth.route('/account', methods=['GET'])
+@use_kwargs(UserSchema(only=('token', 'street', 'dom', 'first_name', 'last_name', 'email', 'number', 'roles')))
+@jwt_required()
+def me_account():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+    return user
 
 
+docs.register(register, blueprint='auth')
+docs.register(login, blueprint='auth')
+docs.register(me_account, blueprint='auth')
