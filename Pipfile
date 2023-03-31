@@ -33,6 +33,7 @@ flask-wtf = "*"
 flask-socketio = "*"
 flask-cors = "*"
 flask-redis = "*"
+flask-mail = "*"
 
 [dev-packages]
 

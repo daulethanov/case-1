@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_access_token, create_refresh_token
 from flask_security import SQLAlchemySessionUserDatastore, RoleMixin, UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 from service import db
@@ -63,6 +63,13 @@ class User(db.Model, UserMixin):
             return user
         else:
             raise Exception('Invalid email or password')
+
+
+    def refresh_token(self):
+        token = create_refresh_token(
+            identity=self.id
+        )
+        return token
 
 
 user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)

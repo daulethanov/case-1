@@ -1,9 +1,9 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request, flash
 from flask_apispec import use_kwargs, marshal_with
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from service import User, docs
 from service.shema.user import UserSchema, AuthSchema
-
+from service.mail import send_password_reset_email
 auth = Blueprint('auth', __name__, url_prefix='/api/auth')
 
 
@@ -33,6 +33,21 @@ def me_account():
     user_id = get_jwt_identity()
     user = User.query.filter_by(id=user_id).first()
     return user
+
+
+@auth.route('/reset_password', methods=["POST"])
+@use_kwargs(UserSchema(only=('email', )))
+def reset_password(email):
+    user = User.query.filter_by(email=email).first()
+    if user:
+        send_password_reset_email(user)
+    else:
+        return jsonify({
+            'message': 'Не найдено почты'
+        })
+    return jsonify({
+        'message': 'Проверь почту'
+    })
 
 
 docs.register(register, blueprint='auth')

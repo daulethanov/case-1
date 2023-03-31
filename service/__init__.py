@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 from flask_security import Security
 from flask_uploads import configure_uploads
@@ -6,6 +7,7 @@ from service.chat.socket import chat
 from service.chat import redis
 from service.chat.socket import socketio
 from service.config.Base import Config
+from service.mail import mail
 from service.model import db
 from service.model.problem import images, ProblemRating
 from service.model.user import User, user_datastore
@@ -21,8 +23,10 @@ def create_app():
     app.config.from_object(Config)
     db.init_app(app)
     admin.init_app(app)
+    jwt = JWTManager(app)
     configure_uploads(app, images)
     redis.init_app(app)
+    mail.init_app(app)
     CORS(app, resources={r"/*": {"origins": "*"}})
     with app.app_context():
         db.create_all()

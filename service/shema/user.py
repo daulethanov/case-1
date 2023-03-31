@@ -13,6 +13,7 @@ class UserSchema(Schema):
     roles = f.String()
     street = f.String()
 
+
 class AuthSchema(Schema):
     access_token = f.String(dump_only=True)
     message = f.String(dump_only=True)

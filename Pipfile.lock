@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f0012ad7116e967d8628deaf85b4dff835b3a64a4d0faa96d1f017363557e21d"
+            "sha256": "e673149e301bf4c59a442419958ac9b5748f184c09f19cf8dfd27d5476feddc3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -290,6 +290,7 @@
             "hashes": [
                 "sha256:22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41"
             ],
+            "index": "pypi",
             "version": "==0.9.1"
         },
         "flask-marshmallow": {

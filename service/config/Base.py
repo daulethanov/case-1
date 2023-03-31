@@ -20,3 +20,10 @@ class Config:
         openapi_version='2.0',
         plugins=[MarshmallowPlugin()]
     )
+    
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = 'aliz1233773@gmail.com'
+    MAIL_PASSWORD = 'rqqkbhzwhmqesfcx'
+    MAIL_DEFAULT_SENDER = 'aliz1233773@gmail.com'
