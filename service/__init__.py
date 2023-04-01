@@ -24,9 +24,9 @@ def create_app():
     db.init_app(app)
     admin.init_app(app)
     jwt = JWTManager(app)
+    mail.init_app(app)
     configure_uploads(app, images)
     redis.init_app(app)
-    mail.init_app(app)
     CORS(app, resources={r"/*": {"origins": "*"}})
     with app.app_context():
         db.create_all()

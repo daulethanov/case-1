@@ -50,6 +50,13 @@ def reset_password(email):
     })
 
 
+@use_kwargs(UserSchema(only='email'), AuthSchema(only='access_token'))
+@auth.route('/reset_password/<str:token>', methods=["GET", "POST"])
+def reset_password_confirm(token):
+    if AuthSchema(only='access_token') == token:
+        pass
+
+
 docs.register(register, blueprint='auth')
 docs.register(login, blueprint='auth')
 docs.register(me_account, blueprint='auth')
